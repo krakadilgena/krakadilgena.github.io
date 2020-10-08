@@ -1,16 +1,16 @@
 
 <! --
-usage: https://krakadilgena.github.io/index.html?botNumber=5&para2=6
+usage: https://krakadilgena.github.io/index.html?botName=5
 -- !>
 
 
 <!DOCTYPE html>
 <html>
 <head>
-<title>Acknowledgement</title>
+<title>Bot Event Report Submission</title>
 </head>
 <body>
-<h4>These are the data from page1.html.</h4>
+<h4>This page will help you submit information about the bot performance</h4>
 <script>
  
 var queryString = decodeURIComponent(window.location.search);
@@ -21,10 +21,15 @@ for (var i = 0; i < queries.length; i++)
   document.write(queries[i] + "<br>");
 }
 
+// Add time
+
 var d = new Date();
 var n = d.getTime();
+var h = d.getHours();
+var m = d.getMinutes();
+var s = d.getSeconds();
 
-document.write("query time is" + n);
+document.write("query time is" + h + ":" + m + ":" + s);
  
 </script>
 </body>
