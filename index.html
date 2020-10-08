@@ -1,6 +1,7 @@
 
 <! --
-usage: https://krakadilgena.github.io/index.html?botName=5
+https://krakadilgena.github.io/index.html?botName=5
+https://www.w3schools.com/html/tryit.asp?filename=tryhtml_input_text
 -- !>
 
 
@@ -11,6 +12,10 @@ usage: https://krakadilgena.github.io/index.html?botName=5
 </head>
 <body>
 <h4>This page will help you submit information about the bot performance</h4>
+
+<p id="botNameInput"></p>
+<p id="eventTime"></p>
+
 <script>
  
 var queryString = decodeURIComponent(window.location.search);
@@ -21,6 +26,8 @@ for (var i = 0; i < queries.length; i++)
   document.write(queries[i] + "<br>");
 }
 
+// code here can use window.carName
+document.getElementById("botNameInput").value = queries[0];
 // Add time
 
 var d = new Date();
@@ -29,8 +36,40 @@ var h = d.getHours();
 var m = d.getMinutes();
 var s = d.getSeconds();
 
-document.write("query time is" + h + ":" + m + ":" + s);
- 
+document.write("query time is " + h + ":" + m + ":" + s);
+
+document.getElementById("eventTime").value="query time is " + h + ":" + m + ":" + s;
+
 </script>
+
+<h1>Show Checkboxes</h1>
+
+<form action="/action_page.php">
+
+
+  <input type="hidden" id="botName" name="botName" value="">
+  <input type="hidden" id="eventTimeForm" name="eventTimeForm" value="">
+
+  <input type="checkbox" id="doublePick" name="doublePick" value="true">
+  <label for="doublePick"> Double Pick</label><br>
+  
+  <input type="checkbox" id="dropItem" name="dropItem" value="true">
+  <label for="dropItem"> An item was dropped</label><br>
+  
+  <input type="checkbox" id="botCollide" name="botCollide" value="true">
+  <label for="botCollide"> Bot Collided</label><br><br>
+    
+  <label for="textInput">Comments are welcome</label>
+  <br>
+  <input type="text" id="textInput" name="textInput" size="50"><br><br>
+
+  <input type="submit" value="Submit"><br>
+</form>
+
+<script>
+document.getElementById("botName").value=document.getElementById("botNameInput").value
+document.getElementById("eventTimeForm").value=document.getElementById("eventTime").value
+</script>
+
 </body>
 </html>
