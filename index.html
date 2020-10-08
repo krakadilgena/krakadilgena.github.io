@@ -1,3 +1,9 @@
+
+<! --
+usage: https://krakadilgena.github.io/index.html?botNumber=5&para2=6
+-- !>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,7 +20,12 @@ for (var i = 0; i < queries.length; i++)
 {
   document.write(queries[i] + "<br>");
 }
+
+var d = new Date();
+var n = d.getTime();
+
+document.write("query time is" + n);
  
-</script> 
+</script>
 </body>
 </html>
